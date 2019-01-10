@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<canvas id = "myCanvas" width = "500" height = "300" style="border: 1px silver"></canvas>
+    <script>
+        var Rectangel = function (chieudai, chieurong) {
+            this.chieudai = chieudai;
+            this.chieurong = chieurong;
+            this.getChieuDai = function () {
+                return chieudai;
+            }
+            this.getChieuRong = function () {
+                return chieurong;
+            }
+            this.getDienTich = function () {
+                return this.chieudai * this.chieurong;
+            }
+            this.getChuVi = function () {
+                return (this.chieudai + this.chieurong) * 2;
+            }
+        }
+        var rectangle = new Rectangel(200, 100);
+        var chieudai = rectangle.getChieuDai();
+        var chieurong = rectangle.getChieuRong();
+        var dientich = rectangle.getDienTich();
+        var chuvi = rectangle.getChuVi();
+        var canvas = document.getElementById("myCanvas");
+        var ctx = canvas.getContext("2d");
+        ctx.fillStyle = "#FF1";
+        ctx.fillRect(0,0,chieudai,chieurong);
+        document.write("Chu vi: " + chuvi + "Dien tich: " + dientich);
+    </script>
+</body>
+</html>
